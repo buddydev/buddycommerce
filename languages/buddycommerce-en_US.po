@@ -1,0 +1,81 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BUddyCommerce\n"
+"POT-Creation-Date: 2019-03-22 08:09+0530\n"
+"PO-Revision-Date: 2019-03-22 08:09+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _e;__;_ex:1,2c;_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: buddycommerce.php:59
+msgid "Unable to register autoloader. The plugin will not work."
+msgstr ""
+
+#: src/core/class-bc-component.php:31
+msgctxt "BuddyCommerce component title"
+msgid "BuddyCommerce"
+msgstr ""
+
+#: src/core/class-bc-component.php:66
+msgid "Search Orders..."
+msgstr ""
+
+#: src/core/class-bc-component.php:105
+#, php-format
+msgid "Shopping %s"
+msgstr ""
+
+#: src/core/class-bc-component.php:126
+msgctxt "Shop sub nav label"
+msgid "Orders"
+msgstr ""
+
+#: src/core/class-bc-component.php:136
+msgctxt "Shop sub nav label"
+msgid "Track Order"
+msgstr ""
+
+#: src/core/class-bc-component.php:145
+msgctxt "Shop sub nav label"
+msgid "Downloads"
+msgstr ""
+
+#: src/core/class-bc-component.php:155
+msgctxt "Shop Sub nav label"
+msgid "Addresses"
+msgstr ""
+
+#: src/core/class-bc-component.php:190
+#, php-format
+msgctxt "My Account Shop nav"
+msgid "Shopping %s"
+msgstr ""
+
+#: src/core/class-bc-component.php:196
+#, php-format
+msgctxt "My Account Shop sub nav"
+msgid "Orders %s"
+msgstr ""
+
+#: src/core/class-bc-component.php:221
+msgctxt "My Account shop sub nav"
+msgid "Track Orders"
+msgstr ""
+
+#: src/core/class-bc-component.php:230
+msgctxt "My Account shop sub nav"
+msgid "Downloads"
+msgstr ""
+
+#: src/core/class-bc-component.php:239
+msgctxt "My Account shop sub nav"
+msgid "Addresses"
+msgstr ""
