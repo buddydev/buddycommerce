@@ -35,7 +35,7 @@ For each of the tab content you can configure:-
 
 
 We hope you will enjoy the integration. Please help us make it better by sharing your idea on our
- * [Blog Post](https://buddydev.com/introducing-buddycommerce-woocommerec-and-buddypress-integration/
+ * [Blog Post](https://buddydev.com/introducing-buddycommerce-woocommerce-and-buddypress-integration/
  * [BuddyDev Forums](https://buddydev.com/support/forums/)
 
 We are working on a detailed guide for the plugin. Please keep an eye on the future updates for more. Demo is coming soon.
@@ -77,9 +77,11 @@ Please get in touch by providing the details [here](https://buddydev.com/buddypr
 
 == Screenshots ==
 
-1. User profile orders page screenshot-1.png
-1. User profile edit address page screenshot-2.png
-1. Admin settings screenshot-3.png
+1. Admin settings for shop screenshot-1.png
+1. Admin settings for orders screenshot-2.png
+1. User profile orders page screenshot-3.png
+1. User edit address under settings(if configured) screenshot-4.png
+
 == Changelog ==
 
 = 1.0.0 =

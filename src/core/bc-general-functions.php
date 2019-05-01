@@ -119,6 +119,7 @@ function bcommerce_get_wc_tabs_details() {
 			'enabled'              => 1,
 			'endpoint'             => false,
 			'label'                => __( 'Addresses', 'buddycommerce' ),
+			'slug'                 => 'addresses',
 			'desc'                 => __( 'Addresses tab settings.', 'buddycommerce' ),
 			'is_top_level'         => 0,
 			'redirect'             => 1,
