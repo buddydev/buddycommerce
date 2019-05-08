@@ -135,6 +135,11 @@ class Admin_Settings_Helper {
 
 
 		$this->add_misc_panel( $page );
+
+		if ( class_exists( 'WC_Subscriptions' ) ) {
+			$this->add_tab_details( 'subscriptions', isset( $tabs['subscriptions'] ) ? $tabs['subscriptions'] : array(), $panel_special );
+		}
+
 		// Save page for future reference.
 		$this->page = $page;
 

@@ -214,3 +214,37 @@ function bcommerce_is_user_add_payment_methods() {
 
 	return $is;
 }
+
+/**
+ * Is it profile subscriptions page?
+ *
+ * @return bool
+ */
+function bcommerce_is_user_subscriptions() {
+	if ( ! bcommerce_is_user_nav_item_enabled( 'subscriptions' ) ) {
+		return false;
+	}
+
+	return bcommerce_is_current_tab( 'subscriptions', true );
+}
+
+/**
+ * Is it profile view subscription page?
+ *
+ * @return bool
+ */
+function bcommerce_is_user_view_subscription() {
+
+	if ( ! bcommerce_is_user_subscriptions() ) {
+		return false;
+	}
+
+	$slug = bcommerce_get_tab_slug( 'view-subscription', true );
+	if ( bcommerce_is_top_level_user_nav_item( 'subscriptions' ) ) {
+		$is = bp_is_current_action( $slug );
+	} else {
+		$is = bp_is_action_variable( $slug, 0 );
+	}
+
+	return $is;
+}

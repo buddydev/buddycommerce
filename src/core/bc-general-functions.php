@@ -160,6 +160,19 @@ function bcommerce_get_wc_tabs_details() {
 
 	);
 
+	if ( class_exists( 'WC_Subscriptions' ) ) {
+		$tabs['subscriptions'] = array(
+			'enabled'              => 0,
+			'endpoint'             => true,
+			'label'                => __( 'Subscriptions', 'buddycommerce' ),
+			//'slug'                 => 'subscriptions',
+			'desc'                 => __( 'Subscription tab settings.', 'buddycommerce' ),
+			'is_top_level'         => 0,
+			'redirect'             => 1,
+			'redirect_description' => __( 'Redirect WooCommerce subscription page to BuddyPress profile page', 'buddycommerce' ),
+		);
+	}
+
 	return apply_filters( 'bcommerce_wc_tabs', $tabs );
 }
 
@@ -356,6 +369,9 @@ function bcommerce_get_view_callback( $tab ) {
 		case 'checkout':
 			$callback = array( $screen, 'checkout' );
 			break;
+		case 'subscriptions':
+			$callback = array( $screen, 'subscriptions' );
+			break;
 	}
 
 	$callback = apply_filters( 'bcommerce_tab_view_callback', $callback, $tab );
@@ -377,6 +393,24 @@ function bcommerce_get_endpoint_slug( $endpoint ) {
 	$query_vars = WC()->query->get_query_vars();
 
 	return ! empty( $query_vars[ $endpoint ] ) ? $query_vars[ $endpoint ] : $endpoint;
+}
+
+/**
+ * Get endpoint from slug.
+ *
+ * @param string $slug current slug.
+ *
+ * @return string|null
+ */
+function bcommerce_get_endpoint_from_slug( $slug ) {
+	$query_vars = WC()->query->get_query_vars();
+	foreach ( $query_vars as $endpoint => $ep_slug ) {
+		if ( $ep_slug === $slug ) {
+			return $endpoint;
+		}
+	}
+
+	return null;
 }
 
 /**

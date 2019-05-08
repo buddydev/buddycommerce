@@ -168,3 +168,32 @@ function bcommerce_get_user_address_permalink( $user_id, $user_url = '', $addres
 function bcommerce_get_user_payment_methods_permalink( $user_id, $user_url = '' ) {
 	return bcommerce_get_user_nav_item_permalink( $user_id, $user_url, 'payment_methods', true );
 }
+
+
+
+/**
+ * Get mapped subscriptions url.
+ *
+ * @param int    $user_id user id.
+ * @param string $user_url user profile url.
+ *
+ * @return string
+ */
+function bcommerce_get_user_subscriptions_permalink( $user_id, $user_url = '' ) {
+	return bcommerce_get_user_nav_item_permalink( $user_id, $user_url, 'subscriptions', true );
+}
+
+/**
+ * Get View subscription url.
+ *
+ * @param int    $user_id user id.
+ * @param string $user_url user profile url.
+ *
+ * @return string
+ */
+function bcommerce_get_user_view_subscription_permalink( $user_id, $user_url = '', $order_id ) {
+
+	$endpoint   = bcommerce_get_endpoint_slug( 'view-subscription' );
+
+	return bcommerce_get_user_subscriptions_permalink( bp_loggedin_user_id() ) . trailingslashit( $endpoint ) . $order_id . '/';
+}

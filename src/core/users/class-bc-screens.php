@@ -130,6 +130,30 @@ class BC_Screens {
 	}
 
 	/**
+	 * Load My Subscriptions content.
+	 *
+	 * Plugin: WooCommerce subscriptions.
+	 */
+	public function subscriptions() {
+
+		if ( bcommerce_is_user_view_subscription() ) {
+			return;
+		}
+
+		add_action( 'bp_template_content', array( $this, 'content_subscriptions' ) );
+		bp_core_load_template( array( 'members/single/plugins' ) );
+
+	}
+
+	/**
+	 * Load View Order content.
+	 */
+	public function view_subscription() {
+		add_action( 'bp_template_content', array( $this, 'content_view_subscription' ) );
+		bp_core_load_template( array( 'members/single/plugins' ) );
+	}
+
+	/**
 	 * Load content for Orders
 	 */
 	public function content_orders() {
@@ -190,4 +214,21 @@ class BC_Screens {
 	public function content_add_payment_methods() {
 		bcommerce_get_template_part( 'members/add-payment-method' );
 	}
+
+	/**
+	 * Load content for Orders
+	 * Plugin: WooCommerce subscriptions.
+	 */
+	public function content_subscriptions() {
+		bcommerce_get_template_part( 'members/subscriptions' );
+	}
+
+	/**
+	 * Load content for View subscription page
+	 * Plugin: WooCommerce subscriptions.
+	 */
+	public function content_view_subscription() {
+		bcommerce_get_template_part( 'members/view-subscription' );
+	}
+
 }

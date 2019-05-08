@@ -68,6 +68,10 @@ class BC_URL_Filters {
 		// woocommerce_get_cancel_order_url
 		//woocommerce_get_cancel_order_url_raw
 		// woocommerce_get_edit_order_url
+
+		// Woo Subscriptions
+
+		add_filter( 'wcs_get_view_subscription_url', array( $this, 'filter_view_subscription_url' ), 10, 2 );
 	}
 
 	/**
@@ -204,5 +208,23 @@ class BC_URL_Filters {
 		}
 
 		return bcommerce_get_user_view_order_permalink( bp_loggedin_user_id(), bp_loggedin_user_domain(), $order->get_id() );
+	}
+
+
+	/**
+	 * Filter View subscription url for WooCommerce Subscriptions plugin.
+	 *
+	 * @param string $url url.
+	 * @param int    $order_id order id.
+	 *
+	 * @return string
+	 */
+	public function filter_view_subscription_url( $url, $order_id ) {
+
+		if ( ! bcommerce_is_user_nav_item_enabled( 'subscriptions' ) ) {
+			return $url;
+		}
+
+		return bcommerce_get_user_view_subscription_permalink( bp_loggedin_user_id(), bp_loggedin_user_domain(), $order_id );
 	}
 }
