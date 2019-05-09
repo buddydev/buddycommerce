@@ -72,6 +72,9 @@ class BC_URL_Filters {
 		// Woo Subscriptions
 
 		add_filter( 'wcs_get_view_subscription_url', array( $this, 'filter_view_subscription_url' ), 10, 2 );
+
+		// for woo memberships.
+		add_filter( 'wc_memberships_members_area_navigation_items', array( $this, 'filter_membership_navigation_items' ) );
 	}
 
 	/**
@@ -177,6 +180,11 @@ class BC_URL_Filters {
 			$url = bcommerce_get_user_orders_permalink( bp_loggedin_user_id(), bp_loggedin_user_domain() );
 		} elseif ( bcommerce_is_user_nav_item_enabled( 'downloads' ) && bcommerce_get_endpoint_slug( 'downloads' ) == $endpoint ) {
 			$url = bcommerce_get_user_downloads_permalink( bp_loggedin_user_id(), bp_loggedin_user_domain() );
+		} elseif ( bcommerce_is_user_nav_item_enabled( 'members_area' ) && function_exists( 'wc_memberships_get_members_area_endpoint' ) && bcommerce_get_endpoint_slug( 'members-area' ) == $endpoint ) {
+			$url = bcommerce_get_user_nav_item_permalink( bp_loggedin_user_id(), bp_loggedin_user_domain(), 'members_area', true );
+			if ( $value ) {
+				$url .= trailingslashit( $value );
+			}
 		}
 
 		// downloads
@@ -226,5 +234,33 @@ class BC_URL_Filters {
 		}
 
 		return bcommerce_get_user_view_subscription_permalink( bp_loggedin_user_id(), bp_loggedin_user_domain(), $order_id );
+	}
+
+
+	/**
+	 * Search replace navigation urls for membership content.
+	 *
+	 * Plugin: WC membership
+	 *
+	 * @param array $nav_items nav items.
+	 *
+	 * @return array
+	 */
+	public function filter_membership_navigation_items( $nav_items ) {
+
+		$my_account_url = trailingslashit( trailingslashit( wc_get_page_permalink( 'myaccount' ) ) . wc_memberships_get_members_area_endpoint() );
+
+		$members_area_url = bcommerce_get_user_nav_item_permalink( bp_loggedin_user_id(), bp_loggedin_user_domain(), 'members_area', true );
+
+		foreach ( $nav_items as $section => $args ) {
+			if ( 'back-to-memberships' === $section ) {
+				$args['url'] = $members_area_url;
+			} else {
+				$args['url'] = str_replace( $my_account_url, $members_area_url, $args['url'] );
+			}
+			$nav_items[ $section ] = $args;
+		}
+
+		return $nav_items;
 	}
 }

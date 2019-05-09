@@ -172,6 +172,10 @@ class BC_Tabs_Helper {
 		if ( class_exists( 'WC_Subscriptions' ) ) {
 			$this->add_subscriptions_tab( $user_id, $args );
 		}
+
+		if ( class_exists( 'WC_Memberships_Loader' ) ) {
+			$this->add_membership_tab( $user_id, $args );
+		}
 	}
 
 	/**
@@ -557,6 +561,56 @@ class BC_Tabs_Helper {
 			bp_core_new_nav_item(
 				array(
 					'name'                    => $this->get_label( $tab, __( 'Subscriptions', 'buddycommerce' ) ),
+					'slug'                    => $tab_slug,
+					'position'                => bcommerce_get_user_nav_item_position_setting( $tab ),
+					'screen_function'         => bcommerce_get_view_callback( $tab ),
+					'default_subnav_slug'     => $tab,
+					'show_for_displayed_user' => $args['access'],
+				)
+			);
+
+			return;
+		}
+
+		$parent_slug = bcommerce_get_user_nav_item_parent_slug_setting( $tab );
+		if ( ! $parent_slug ) {
+			$parent_slug = bcommerce_get_tab_slug( 'shop', false );
+		}
+
+		bp_core_new_subnav_item(
+			array(
+				'name'            => $this->get_label( $tab, __( 'Subscriptions', 'buddycommerce' ) ),
+				'slug'            => $tab_slug,
+				'parent_url'      => trailingslashit( $args['user_domain'] . $parent_slug ),
+				'parent_slug'     => $parent_slug,
+				'screen_function' => bcommerce_get_view_callback( $tab ),
+				'position'        => bcommerce_get_user_nav_item_position_setting( $tab ),
+				'user_has_access' => $args['access'],
+			)
+		);
+	}
+
+	/**
+	 * Add Membership area tab for user.
+	 *
+	 * @param int   $user_id user id.
+	 * @param array $args args.
+	 *
+	 * plugin: WooCommerce Memberships.
+	 */
+	private function add_membership_tab( $user_id, $args ) {
+
+		$tab = 'members_area';
+		if ( ! bcommerce_is_user_nav_item_enabled( $tab ) ) {
+			return;
+		}
+
+		$tab_slug       = bcommerce_get_tab_slug( $tab, true );
+
+		if ( bcommerce_is_top_level_user_nav_item( $tab ) ) {
+			bp_core_new_nav_item(
+				array(
+					'name'                    => $this->get_label( $tab, __( 'My Membership', 'buddycommerce' ) ),
 					'slug'                    => $tab_slug,
 					'position'                => bcommerce_get_user_nav_item_position_setting( $tab ),
 					'screen_function'         => bcommerce_get_view_callback( $tab ),

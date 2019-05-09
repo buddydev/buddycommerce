@@ -50,6 +50,9 @@ class BC_Account_Redirects {
 		add_filter( 'bp_template_redirect', array( $this, 'maybe_redirect_checkout' ) );
 		add_filter( 'bp_template_redirect', array( $this, 'maybe_redirect_addresses' ) );
 		add_filter( 'bp_template_redirect', array( $this, 'maybe_redirect_payment_methods' ) );
+
+		// There is a problem with WooCommerce memberships plugin. You can not filter 'wc_memberships_get_members_area_url()'.
+		add_action( 'bp_template_redirect', array( $this, 'maybe_redirect_wc_membership_from_account' ) );
 	}
 
 	/**
@@ -244,5 +247,51 @@ class BC_Account_Redirects {
 		}
 
 		return $needs_redirection;
+	}
+
+	/**
+	 * Fo WooCommerce Membership redirect
+	 *
+	 * We should not have done it but we don't have a choice and it is bad.
+	 *
+	 * Since there is no way to filter the view membership url, we are doing a redirect from my account/member area if it applies.
+	 */
+	public function maybe_redirect_wc_membership_from_account() {
+		// don't bother.
+		if ( ! class_exists( 'WC_Memberships_Loader' ) || ! bcommerce_is_user_nav_item_enabled( 'members_area' ) ) {
+			return;
+		}
+
+		$shop_slug = bcommerce_get_tab_slug( 'shop' );
+
+		if ( ! bp_is_current_component( $shop_slug ) ) {
+			return;
+		}
+
+		// if we are here, the tab is enabled.
+		// we do not need to do any redirect if it is a sub tab and parent is shop.
+		$is_top_level = bcommerce_is_top_level_user_nav_item( 'members_area' );
+		$parent_slug  = bcommerce_get_user_nav_item_parent_slug_setting( 'members_area' );
+		// if it is our shop page, we don't need to worry.Shop is the my account page.
+		if ( ! $is_top_level && ( empty( $parent_slug ) || $parent_slug == $shop_slug ) ) {
+			return; // No redirect.
+		}
+
+		// check if we need to redirect.
+		$members_area_slug = bcommerce_get_tab_slug( 'members_area', true );
+
+		if ( ! bp_is_current_action( $members_area_slug ) ) {
+			return;
+		}
+
+		// we will need to redirect.
+		$redirect_url = bcommerce_get_user_nav_item_permalink( bp_loggedin_user_id(), bp_loggedin_user_domain(), 'members_area', true );
+		// prepare the url to redirect to.
+		$chunks = bp_action_variables();
+		$chunks = array_filter( $chunks );
+		if ( $chunks ) {
+			$redirect_url = trailingslashit( $redirect_url ) . trailingslashit( join( '/', $chunks ) );
+		}
+		bp_core_redirect( $redirect_url );
 	}
 }

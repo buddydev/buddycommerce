@@ -173,6 +173,19 @@ function bcommerce_get_wc_tabs_details() {
 		);
 	}
 
+	if ( class_exists( 'WC_Memberships_Loader' ) ) {
+		$tabs['members_area'] = array(
+			'enabled'              => 0,
+			'endpoint'             => true,
+			'label'                => __( 'Memberships', 'buddycommerce' ),
+			//'slug'                 => 'subscriptions',
+			'desc'                 => __( 'Membership tab settings.', 'buddycommerce' ),
+			'is_top_level'         => 0,
+			'redirect'             => 1,
+			'redirect_description' => __( 'Redirect WooCommerce My membership page to BuddyPress profile page', 'buddycommerce' ),
+		);
+	}
+
 	return apply_filters( 'bcommerce_wc_tabs', $tabs );
 }
 
@@ -372,6 +385,9 @@ function bcommerce_get_view_callback( $tab ) {
 		case 'subscriptions':
 			$callback = array( $screen, 'subscriptions' );
 			break;
+		case 'members_area':
+			$callback = array( $screen, 'memberships' );
+			break;
 	}
 
 	$callback = apply_filters( 'bcommerce_tab_view_callback', $callback, $tab );
@@ -391,6 +407,10 @@ function bcommerce_get_view_callback( $tab ) {
  */
 function bcommerce_get_endpoint_slug( $endpoint ) {
 	$query_vars = WC()->query->get_query_vars();
+
+	if ( 'members-area' === $endpoint && function_exists( 'wc_memberships_get_members_area_endpoint' ) ) {
+		$endpoint = wc_memberships_get_members_area_endpoint();
+	}
 
 	return ! empty( $query_vars[ $endpoint ] ) ? $query_vars[ $endpoint ] : $endpoint;
 }
