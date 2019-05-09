@@ -82,6 +82,6 @@ class BC_Checkout_Endpoint_Screen_Handler {
 
 		set_query_var( $endpoint, $value );
 
-		BC_Screens::get_instance()->view_order();
+		BC_Screens::get_instance()->checkout();
 	}
 }
