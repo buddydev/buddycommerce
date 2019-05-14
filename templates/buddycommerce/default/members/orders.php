@@ -1,6 +1,6 @@
 <?php
 /**
- * User MY Orders Page content.
+ * User My Orders Page content.
  *
  * @package    BuddyCommerce
  * @subpackage templates\default\members

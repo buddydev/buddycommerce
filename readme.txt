@@ -2,8 +2,8 @@
 Contributors: buddydev, sbrajesh
 Tags: woocommerce,buddypress,woocommerce-for-buddypress
 Requires at least: 4.8
-Tested up to: 5.1
-Stable tag: 1.0.0
+Tested up to: 5.2
+Stable tag: 1.0.1
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -17,21 +17,24 @@ You can integrate all or part of the functionality from WooCommerce account to B
 It is a lightweight plugin aimed at providing quick and easy integration between BuddyPress and WooCommerce.
 
 In the current version, we support:
-*   WooCommerce user account to BuddyPress User profile integration.
-*   Configurable redirection from WooCommerce account to BuddyPress profile tab(Can be enabled/disabled).
-*   You can limit which WooCommerce account content appears on BuddyPress profile.
-*   WooCommerce Orders history & Track Orders on BuddyPress user profile.
-*   WooCommerce Address View & Manage(edit/update) address on BuddyPress user profile.
-*   WooCommerce user downloads availability from BuddyPress user profile.
-*   WooCommerce user payment methods on BuddyPress user profile.
-*  **All content can be added as a top level BuddyPress profile tab or sub tab of any other existing BuddyPress tab**
+* WooCommerce user account to BuddyPress User profile integration.
+* Configurable redirection from WooCommerce account to BuddyPress profile tab(Can be enabled/disabled).
+* You can limit which WooCommerce account content appears on BuddyPress profile.
+* WooCommerce Orders history & Track Orders on BuddyPress user profile.
+* WooCommerce Address View & Manage(edit/update) address on BuddyPress user profile.
+* WooCommerce user downloads availability from BuddyPress user profile.
+* WooCommerce user payment methods on BuddyPress user profile.
+* **All content can be added as a top level BuddyPress profile tab or sub tab of any other existing BuddyPress tab**
+* New: WooCommerce Subscriptions on BuddyPress User Profile
+* New: WooCommerce Membership on BuddyPress User Profile
+* Better handling of checkout endpoints.
 
 For each of the tab content you can configure:-
-*   Whether the tab is enabled on BuddyPress profile or not.
-*   Label, slug, position for the BuddyPress Tab/Subtab and admin bar menu item.
-*   Whether the tab appears as top level user profile tab or child of some existing tab.
-*   Whether to redirect from WooCommerce account end points to BuddyPress profile.
-*   And some more..
+* Whether the tab is enabled on BuddyPress profile or not.
+* Label, slug, position for the BuddyPress Tab/Subtab and admin bar menu item.
+* Whether the tab appears as top level user profile tab or child of some existing tab.
+* Whether to redirect from WooCommerce account end points to BuddyPress profile.
+* And some more..
 
 
 We hope you will enjoy the integration. Please help us make it better by sharing your idea on our
@@ -40,7 +43,7 @@ We hope you will enjoy the integration. Please help us make it better by sharing
 
 We are working on a detailed guide for the plugin. Please keep an eye on the future updates for more. Demo is coming soon.
 
-=== Support ===
+= Support =
 Please use [BuddyDev Support Forums](https://buddydev.com/support/forums/) for the support.
 
 == Installation ==
@@ -83,6 +86,10 @@ Please get in touch by providing the details [here](https://buddydev.com/buddypr
 1. User edit address under settings(if configured) screenshot-4.png
 
 == Changelog ==
+= 1.0.1 =
+* Added support for WooCommerce Subscriptions
+* Added support for WooCommerce Membership
+* Better handling of checkout endpoint
 
 = 1.0.0 =
 * Initial release.

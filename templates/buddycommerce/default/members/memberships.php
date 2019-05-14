@@ -14,6 +14,7 @@
 
 // Do not allow direct access over web.
 defined( 'ABSPATH' ) || exit;
+
 echo '<div class="wc-membership-contents">';
 $endpoint = wc_memberships_get_members_area_endpoint();
 
