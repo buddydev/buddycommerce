@@ -41,6 +41,9 @@ We hope you will enjoy the integration. Please help us make it better by sharing
  * [Blog Post](https://buddydev.com/introducing-buddycommerce-woocommerce-and-buddypress-integration/
  * [BuddyDev Forums](https://buddydev.com/support/forums/)
 
+= Contribute =
+The plugin is developed over github. Please [contribute](https://github.com/buddydev/buddycommerce).
+
 We are working on a detailed guide for the plugin. Please keep an eye on the future updates for more. Demo is coming soon.
 
 = Support =
