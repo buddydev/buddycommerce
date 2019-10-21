@@ -38,9 +38,9 @@ if ( ! function_exists( 'is_add_payment_method_page' ) ) {
 	 */
 	function is_add_payment_method_page() {
 
-		global $wp;
+		$is = bcommerce_is_user_add_payment_methods();
 
-		return is_account_page() && ( isset( $wp->query_vars['payment-methods'] ) || isset( $wp->query_vars['add-payment-method'] ) );
+		return $is || is_account_page() && ( isset( $wp->query_vars['payment-methods'] ) || isset( $wp->query_vars['add-payment-method'] ) );
 	}
 }
 
