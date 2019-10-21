@@ -77,6 +77,8 @@ class BC_Bootstrapper {
 	 * Register handlers.
 	 */
 	private function register() {
+		$path = $this->path;
+		require $path . 'src/core/bc-wc-override.php';
 		// load core.
 		add_action( 'plugins_loaded', array( $this, 'load' ) );
 		add_action( 'plugins_loaded', array( $this, 'load_admin' ), 9996 ); // pt settings 1.0.4.
@@ -166,7 +168,6 @@ class BC_Bootstrapper {
 		require $path . 'src/core/bc-link-functions.php';
 		require $path . 'src/core/bc-template.php';
 		require $path . 'src/core/bc-conditional-functions.php';
-		require $path . 'src/core/bc-wc-override.php';
 	}
 
 	/**
