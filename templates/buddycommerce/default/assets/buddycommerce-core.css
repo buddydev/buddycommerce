@@ -1,6 +1,6 @@
 /* Hide add payment methods on the user profile screen for now*/
 .bcommerce-payment-methods a[href="/add-payment-method/"] {
-    display: none;
+   /* display: none;*/
 }
 .wc-membership-contents {
     display: flex;
