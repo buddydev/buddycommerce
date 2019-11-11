@@ -171,16 +171,6 @@ class BC_URL_Filters {
 			if ( $value ) {
 				$url .= trailingslashit( $value );
 			}
-		} elseif ( bcommerce_is_user_nav_item_enabled( 'payment_methods' ) && bcommerce_get_endpoint_slug( 'payment-methods' ) === $endpoint ) {
-			$url = bcommerce_get_user_payment_methods_permalink( bp_loggedin_user_id(), bp_loggedin_user_domain() ) . trailingslashit( $endpoint );
-			if ( $value ) {
-				$url .= trailingslashit( $value );
-			}
-		} elseif ( bcommerce_is_user_nav_item_enabled( 'payment_methods' ) && bcommerce_get_endpoint_slug( 'add-payment-method' ) === $endpoint ) {
-			$url = bcommerce_get_user_payment_methods_permalink( bp_loggedin_user_id(), bp_loggedin_user_domain() ) . trailingslashit( $endpoint );
-			if ( $value ) {
-				$url .= trailingslashit( $value );
-			}
 		} elseif ( bcommerce_is_user_nav_item_enabled( 'orders' ) && bcommerce_get_endpoint_slug( 'orders' ) === $endpoint ) {
 			$url = bcommerce_get_user_orders_permalink( bp_loggedin_user_id(), bp_loggedin_user_domain() );
 		} elseif ( bcommerce_is_user_nav_item_enabled( 'downloads' ) && bcommerce_get_endpoint_slug( 'downloads' ) == $endpoint ) {
@@ -190,8 +180,27 @@ class BC_URL_Filters {
 			if ( $value ) {
 				$url .= trailingslashit( $value );
 			}
+		} elseif(  bcommerce_is_user_nav_item_enabled( 'payment_methods' ) ) {
+			$match = false;
+			if( bcommerce_get_endpoint_slug( 'payment-methods' ) === $endpoint  ) {
+				$match = true;
+			} elseif( bcommerce_get_endpoint_slug( 'add-payment-method' ) === $endpoint ) {
+				$match = true;
+			} elseif(bcommerce_get_endpoint_slug( 'delete-payment-method' ) === $endpoint) {
+				$match = true;
+			} elseif( bcommerce_get_endpoint_slug( 'set-default-payment-method' ) === $endpoint) {
+				$match = true;
+			}
+
+			if( $match ) {
+				$url = bcommerce_get_user_payment_methods_permalink( bp_loggedin_user_id(), bp_loggedin_user_domain() ) . trailingslashit( $endpoint );
+				if ( $value ) {
+					$url .= trailingslashit( $value );
+				}
+			}
 		}
 
+		//delete_payment_method
 		// downloads
 		// payment-methods
 		// More endpoints.
