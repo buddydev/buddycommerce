@@ -43,25 +43,27 @@ class BC_Add_Payment_Methods_Screen_Handler {
 	 * Register filters.
 	 */
 	private function register() {
-		//add_action( 'wp', array( $this, 'maybe_update_query' ), 9 );
+		add_action( 'wp', array( $this, 'maybe_update_query' ), 11 );
 		add_action( 'bp_actions', array( $this, 'maybe_handle' ) );
 	}
 
 	public function maybe_update_query() {
 		// we may update it for admin in future to let them update others address.
-		if ( !function_exists('buddypress') || ! bp_is_my_profile() ||! bcommerce_is_user_payment_methods() ) {
+		if ( ! function_exists( 'buddypress' ) || ! bp_is_my_profile() || ! bcommerce_is_user_payment_methods() ) {
 			return;
 		}
 
-		$is_top =  bcommerce_is_top_level_user_nav_item( 'payment_methods' );
-		$val = $is_top ? bp_action_variable(0) : bp_action_variable(1);
-		if( $this->is_payment_endpoint( bcommerce_get_tab_slug( 'add-payment-method', true )) ) {
-			set_query_var('add-payment-method');
-		} elseif( $this->is_payment_endpoint( bcommerce_get_tab_slug( 'set-payment-method', true ))) {
+		$is_top = bcommerce_is_top_level_user_nav_item( 'payment_methods' );
+		$val    = $is_top ? bp_action_variable( 0 ) : bp_action_variable( 1 );
 
-			set_query_var('set-payment-method', $val );
-		} elseif( $this->is_payment_endpoint( bcommerce_get_tab_slug( 'delete-payment-method', true ))) {
-			set_query_var('set-payment-method', $val );
+		global $wp;
+		if ( $this->is_payment_endpoint( bcommerce_get_tab_slug( 'add-payment-method', true ) ) ) {
+			$wp->set_query_var( 'add-payment-method', 1 );
+		} elseif ( $this->is_payment_endpoint( bcommerce_get_tab_slug( 'set-default-payment-method', true ) ) ) {
+			$wp->set_query_var( 'set-default-payment-method', $val );
+		} elseif ( $this->is_payment_endpoint( bcommerce_get_tab_slug( 'delete-payment-method', true ) ) ) {
+			$wp->set_query_var( 'delete-payment-method', $val );
+
 		}
 
 	}
