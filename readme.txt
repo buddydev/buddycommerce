@@ -2,8 +2,8 @@
 Contributors: buddydev, sbrajesh
 Tags: woocommerce,buddypress,woocommerce-for-buddypress
 Requires at least: 4.8
-Tested up to: 5.2
-Stable tag: 1.0.1
+Tested up to: 5.3.2
+Stable tag: 1.0.2
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -68,10 +68,10 @@ Please use [BuddyDev Support Forums](https://buddydev.com/support/forums/) for t
 Yes, it does. If both WooCommerce & BuddyPress are not active, the plugin will not do anything.
 
 = What is the supported BuddyPress version? =
-BuddyPress 3.0+, Tested with BuddyPress 4.3
+BuddyPress 3.0+, Tested with BuddyPress 5.1.2
 
 = What is the supported WooCommerce version? =
-WooCommerce 3.5+, Tested with BuddyPress 3.6.2
+WooCommerce 3.5+, Tested with BuddyPress 3.9.1
 
 = Can I suggest a new feature? =
 Sure. We will love to hear your ideas. Please share your thoughts on [BuddyDev Support Forums](https://buddydev.com/support/forums/)
@@ -89,6 +89,9 @@ Please get in touch by providing the details [here](https://buddydev.com/buddypr
 1. User edit address under settings(if configured) screenshot-4.png
 
 == Changelog ==
+= 1.0.2 =
+* Fix payment method actions(Add/Set default, delete) for the shops allowing saving of payment methods.
+
 = 1.0.1 =
 * Added support for WooCommerce Subscriptions
 * Added support for WooCommerce Membership
