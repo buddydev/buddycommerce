@@ -12,9 +12,9 @@
 
 namespace BuddyCommerce\Core\Users\Handlers;
 
-// Do not allow direct access over web.
 use BuddyCommerce\Core\Users\BC_Screens;
 
+// Do not allow direct access over web.
 defined( 'ABSPATH' ) || exit;
 
 /**

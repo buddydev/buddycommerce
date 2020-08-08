@@ -13,4 +13,4 @@
 // Do not allow direct access over web.
 defined( 'ABSPATH' ) || exit;
 
-do_action( 'woocommerce_account_orders_endpoint' );
+do_action( 'woocommerce_account_orders_endpoint', bcommerce_get_current_page_number( 'orders' ) );

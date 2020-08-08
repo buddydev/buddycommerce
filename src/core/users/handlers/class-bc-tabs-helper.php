@@ -190,7 +190,7 @@ class BC_Tabs_Helper {
 			return;
 		}
 
-		$tab_slug       = bcommerce_get_tab_slug( $tab, true );
+		$tab_slug = bcommerce_get_tab_slug( $tab, true );
 
 		if ( bcommerce_is_top_level_user_nav_item( $tab ) ) {
 			bp_core_new_nav_item(

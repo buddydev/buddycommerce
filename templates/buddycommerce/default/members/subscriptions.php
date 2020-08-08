@@ -13,4 +13,4 @@
 // Do not allow direct access over web.
 defined( 'ABSPATH' ) || exit;
 // needs current page to be passed.
-do_action( 'woocommerce_account_subscriptions_endpoint' );
+do_action( 'woocommerce_account_subscriptions_endpoint', bcommerce_get_current_page_number( 'subscriptions' ) );
