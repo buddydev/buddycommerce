@@ -173,8 +173,14 @@ class BC_URL_Filters {
 			}
 		} elseif ( bcommerce_is_user_nav_item_enabled( 'orders' ) && bcommerce_get_endpoint_slug( 'orders' ) === $endpoint ) {
 			$url = bcommerce_get_user_orders_permalink( bp_loggedin_user_id(), bp_loggedin_user_domain() );
+			if ( $value ) {
+				$url .= trailingslashit( $value );
+			}
 		} elseif ( bcommerce_is_user_nav_item_enabled( 'downloads' ) && bcommerce_get_endpoint_slug( 'downloads' ) == $endpoint ) {
 			$url = bcommerce_get_user_downloads_permalink( bp_loggedin_user_id(), bp_loggedin_user_domain() );
+			if ( $value ) {
+				$url .= trailingslashit( $value );
+			}
 		} elseif ( bcommerce_is_user_nav_item_enabled( 'members_area' ) && function_exists( 'wc_memberships_get_members_area_endpoint' ) && bcommerce_get_endpoint_slug( 'members-area' ) == $endpoint ) {
 			$url = bcommerce_get_user_nav_item_permalink( bp_loggedin_user_id(), bp_loggedin_user_domain(), 'members_area', true );
 			if ( $value ) {
