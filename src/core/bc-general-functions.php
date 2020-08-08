@@ -443,6 +443,28 @@ function bcommerce_get_endpoints() {
 }
 
 /**
+ * Get current page number for paginated pages.
+ *
+ * @param string $tab tab id.
+ *
+ * @return int
+ */
+function bcommerce_get_current_page_number( $tab ) {
+
+	if ( bcommerce_is_top_level_user_nav_item( $tab ) ) {
+		$current_page = absint( bp_current_action() );
+	} else {
+		$current_page = absint( bp_action_variable( 0 ) );
+	}
+
+	if ( ! $current_page ) {
+		$current_page = 1;
+	}
+
+	return $current_page;
+}
+
+/**
  * No-op format notifications slug.
  */
 function bcommerce_format_notifications() {
