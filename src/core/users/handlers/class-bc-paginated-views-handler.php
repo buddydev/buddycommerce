@@ -1,10 +1,12 @@
 <?php
 /**
- * BuddyCommerce View order screen handler.
+ * BuddyCommerce paginated views handler
+ *
+ * Loads views for paginated screens.
  *
  * @package    BuddyCommerce
  * @subpackage Core\Users\Handlers
- * @copyright  Copyright (c) 2019, Brajesh Singh
+ * @copyright  Copyright (c) 2020, Brajesh Singh
  * @license    https://www.gnu.org/licenses/gpl.html GNU Public License
  * @author     Brajesh Singh
  * @since      1.0.0
@@ -18,14 +20,14 @@ use BuddyCommerce\Core\Users\BC_Screens;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * View order screen handler.
+ * Paginated views handler.
  */
-class BC_View_Order_Screen_Handler {
+class BC_Paginated_Views_Handler {
 
 	/**
 	 * Setup the bootstrapper.
 	 *
-	 * @return BC_View_Order_Screen_Handler
+	 * @return BC_Paginated_Views_Handler
 	 */
 	public static function boot() {
 		static $self;
@@ -43,23 +45,23 @@ class BC_View_Order_Screen_Handler {
 	 * Register filters.
 	 */
 	private function register() {
-		add_action( 'bp_actions', array( $this, 'maybe_handle_order' ) );
+		add_action( 'bp_actions', array( $this, 'handle_orders_pagination' ) );
 	}
 
+
 	/**
-	 * If this is address end point, handle it.
+	 * If this is orders end point and paginated handle it.
 	 */
-	public function maybe_handle_order() {
+	public function handle_orders_pagination() {
 		// we may update it for admin in future to let them update others address.
-		if ( ! bp_is_my_profile() || ! bcommerce_is_user_view_order() ) {
+		if ( ! bp_is_my_profile() || ! bcommerce_is_user_orders() || bcommerce_is_user_view_order() ) {
 			return;
 		}
 
+		if ( ! is_numeric( bp_current_action() ) ) {
+			return;
+		}
 
-		$order_id = bcommerce_is_top_level_user_nav_item( 'orders' ) ? bp_action_variable( 0 ) : bp_action_variable( 1 );
-
-		set_query_var( 'view-order', $order_id );
-
-		BC_Screens::get_instance()->view_order();
+		BC_Screens::get_instance()->orders();
 	}
 }
