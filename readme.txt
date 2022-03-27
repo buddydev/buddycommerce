@@ -1,9 +1,9 @@
 === BuddyCommerce: WooCommerce and BuddyPress Integration  ===
 Contributors: buddydev, sbrajesh
 Tags: woocommerce,buddypress,woocommerce-for-buddypress
-Requires at least: 4.8
-Tested up to: 5.5
-Stable tag: 1.0.3
+Requires at least: 5.0
+Tested up to: 5.9.2
+Stable tag: 1.0.4
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -93,6 +93,8 @@ Please get in touch by providing the details [here](https://buddydev.com/buddypr
 1. User edit address under settings(if configured) screenshot-4.png
 
 == Changelog ==
+= 1.0.4 =
+* Fix add payment method showing existing payment methods and double button.
 
 = 1.0.3 =
 * Fix orders pagination.
