@@ -44,7 +44,7 @@ class BC_Add_Payment_Methods_Screen_Handler {
 	 */
 	private function register() {
 		add_action( 'wp', array( $this, 'maybe_update_query' ), 11 );
-		add_action( 'bp_actions', array( $this, 'maybe_handle' ) );
+		//add_action( 'bp_actions', array( $this, 'maybe_handle' ) );
 	}
 
 	public function maybe_update_query() {

@@ -117,8 +117,12 @@ class BC_Screens {
 	 * Load Payment screen content.
 	 */
 	public function payment_methods() {
-		add_action( 'bp_template_content', array( $this, 'content_payment_methods' ) );
-		bp_core_load_template( array( 'members/single/plugins' ) );
+		if ( bcommerce_is_user_add_payment_methods() ) {
+			$this->add_payment_methods();
+		} else {
+			add_action( 'bp_template_content', array( $this, 'content_payment_methods' ) );
+			bp_core_load_template( array( 'members/single/plugins' ) );
+		}
 	}
 
 	/**
