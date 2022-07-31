@@ -8,7 +8,7 @@
  * Plugin Name:       BuddyCommerce
  * Plugin URI:        https://buddydev.com/plugins/buddycommerce/
  * Description:       BuddyPress and WooCommerce Integration.
- * Version:           1.0.3
+ * Version:           1.0.5
  * Author:            BuddyDev
  * Author URI:        https://buddydev.com/
  * License:           GPL-2.0+
@@ -49,7 +49,7 @@ require_once 'class-buddycommerce.php';
 
 // Register autoloader.
 try {
-	spl_autoload_register( new BC_Autoloader( 'BuddyCommerce\\', __DIR__ . '/src/' ), false );
+	spl_autoload_register( new BC_Autoloader( 'BuddyCommerce\\', __DIR__ . '/src/' ) );
 	// Boot the main class.
 	BuddyCommerce::boot();
 	// setup bootstrapper.
