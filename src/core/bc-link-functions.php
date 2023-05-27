@@ -109,7 +109,7 @@ function bcommerce_get_user_orders_permalink( $user_id, $user_url = '' ) {
  */
 function bcommerce_get_user_view_order_permalink( $user_id, $user_url = '', $order_id = 0 ) {
 
-	$endpoint   = bcommerce_get_endpoint_slug( 'view-order' );
+	$endpoint = bcommerce_get_endpoint_slug( 'view-order' );
 
 	return bcommerce_get_user_orders_permalink( bp_loggedin_user_id() ) . trailingslashit( $endpoint ) . $order_id . '/';
 }

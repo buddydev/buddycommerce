@@ -75,7 +75,8 @@ function bcommerce_get_default_options() {
 function bcommerce_get_wc_tabs_details() {
 
 	$tabs = array(
-		'shop'         => array(
+
+		'shop'            => array(
 			'enabled'              => 1,
 			'endpoint'             => false,
 			'label'                => __( 'Shop', 'buddycommerce' ),
@@ -86,7 +87,7 @@ function bcommerce_get_wc_tabs_details() {
 			'redirect_description' => __( 'Redirect WooCommerce my account page to BuddyPress profile page', 'buddycommerce' ),
 			'toplevel_only'        => true,
 		),
-		'orders'       => array(
+		'orders'          => array(
 			'enabled'              => 1,
 			'endpoint'             => true,
 			'label'                => __( 'Order', 'buddycommerce' ),
@@ -95,8 +96,7 @@ function bcommerce_get_wc_tabs_details() {
 			'redirect'             => 1,
 			'redirect_description' => __( 'Redirect WooCommerce orders page to BuddyPress profile page', 'buddycommerce' ),
 		),
-
-		'track_orders' => array(
+		'track_orders'    => array(
 			'enabled'      => 1,
 			'endpoint'     => false,
 			'label'        => __( 'Track Order', 'buddycommerce' ),
@@ -104,8 +104,7 @@ function bcommerce_get_wc_tabs_details() {
 			'slug'         => 'track-orders',
 			'is_top_level' => 0,
 		),
-
-		'downloads'    => array(
+		'downloads'       => array(
 			'enabled'              => 1,
 			'endpoint'             => true,
 			'label'                => __( 'Downloads', 'buddycommerce' ),
@@ -114,8 +113,7 @@ function bcommerce_get_wc_tabs_details() {
 			'redirect'             => 1,
 			'redirect_description' => __( 'Redirect WooCommerce my downloads page to BuddyPress profile page', 'buddycommerce' ),
 		),
-
-		'addresses' => array(
+		'addresses'       => array(
 			'enabled'              => 1,
 			'endpoint'             => false,
 			'label'                => __( 'Addresses', 'buddycommerce' ),
@@ -125,7 +123,6 @@ function bcommerce_get_wc_tabs_details() {
 			'redirect'             => 1,
 			'redirect_description' => __( 'Redirect WooCommerce addresses page to BuddyPress profile page', 'buddycommerce' ),
 		),
-
 		'payment_methods' => array(
 			'enabled'              => 1,
 			'endpoint'             => true,
@@ -156,8 +153,6 @@ function bcommerce_get_wc_tabs_details() {
 			'redirect'             => 1,
 			'redirect_description' => __( 'Redirect site checkout page to BuddyPress profile checkout page', 'buddycommerce' ),
 		),
-
-
 	);
 
 	if ( class_exists( 'WC_Subscriptions' ) ) {
@@ -165,7 +160,7 @@ function bcommerce_get_wc_tabs_details() {
 			'enabled'              => 0,
 			'endpoint'             => true,
 			'label'                => __( 'Subscriptions', 'buddycommerce' ),
-			//'slug'                 => 'subscriptions',
+			// 'slug'                 => 'subscriptions',
 			'desc'                 => __( 'Subscription tab settings.', 'buddycommerce' ),
 			'is_top_level'         => 0,
 			'redirect'             => 1,
@@ -178,7 +173,7 @@ function bcommerce_get_wc_tabs_details() {
 			'enabled'              => 0,
 			'endpoint'             => true,
 			'label'                => __( 'Memberships', 'buddycommerce' ),
-			//'slug'                 => 'subscriptions',
+			// 'slug'                 => 'subscriptions',
 			'desc'                 => __( 'Membership tab settings.', 'buddycommerce' ),
 			'is_top_level'         => 0,
 			'redirect'             => 1,
@@ -188,7 +183,6 @@ function bcommerce_get_wc_tabs_details() {
 
 	return apply_filters( 'bcommerce_wc_tabs', $tabs );
 }
-
 
 /**
  * Get the tab slug.
@@ -489,9 +483,9 @@ function bcommerce_verify_nonce( $action, $name = '_wpnonce', $method = 'POST' )
 	$method = strtoupper( $method );
 
 	if ( 'POST' === $method ) {
-		$data = isset( $_POST[ $name ] ) ? $_POST[ $name ] : '';
+		$data = isset( $_POST[ $name ] ) ? wp_unslash( $_POST[ $name ] ) : '';
 	} else {
-		$data = isset( $_GET[ $name ] ) ? $_GET[ $name ] : '';
+		$data = isset( $_GET[ $name ] ) ? wp_unslash( $_GET[ $name ] ) : '';
 	}
 
 	return wp_verify_nonce( $data, $action );
@@ -501,14 +495,14 @@ function bcommerce_verify_nonce( $action, $name = '_wpnonce', $method = 'POST' )
  * Sanitize input value. Arrays are cleaned recursively.
  * Non-scalar values are ignored.
  *
- * @param string|array $var Data to sanitize.
+ * @param string|array $input_var Data to sanitize.
  *
  * @return string|array
  */
-function bcommerce_sanitize_input( $var ) {
-	if ( is_array( $var ) ) {
-		return array_map( 'bcommerce_sanitize_input', $var );
+function bcommerce_sanitize_input( $input_var ) {
+	if ( is_array( $input_var ) ) {
+		return array_map( 'bcommerce_sanitize_input', $input_var );
 	} else {
-		return is_scalar( $var ) ? sanitize_text_field( $var ) : $var;
+		return is_scalar( $input_var ) ? sanitize_text_field( $input_var ) : $input_var;
 	}
 }

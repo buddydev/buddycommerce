@@ -13,7 +13,6 @@
 // Do not allow direct access over web.
 defined( 'ABSPATH' ) || exit;
 
-
 /**
  * Check if the given tab is currently being viewed.
  *
@@ -34,7 +33,7 @@ function bcommerce_is_current_tab( $tab, $endpoint = true ) {
 			$parent = bcommerce_get_tab_slug( 'shop', false );
 		}
 
-		$is     = bp_is_current_component( $parent ) && bp_is_current_action( $slug );
+		$is = bp_is_current_component( $parent ) && bp_is_current_action( $slug );
 	}
 
 	return $is;
@@ -52,7 +51,7 @@ function bcommerce_is_woo_page() {
 	}
 
 	$component = bp_current_component();
-	$action = bp_current_action();
+	$action    = bp_current_action();
 
 	$tab = bcommerce_get_woo_item_from_slug( $component );
 
@@ -71,7 +70,6 @@ function bcommerce_is_woo_page() {
 	}
 
 	return false;
-
 }
 
 /**
@@ -87,7 +85,7 @@ function bcommerce_get_woo_item_from_slug( $slug ) {
 	foreach ( $tabs as $tab => $tab_settings ) {
 		$tab_slug = bcommerce_get_tab_slug( $tab, ! empty( $tab_settings['endpoint'] ) );
 
-		if ( $slug == $tab_slug ) {
+		if ( (string) $slug === $tab_slug ) {
 			return $tab;
 		}
 	}
