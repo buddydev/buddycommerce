@@ -2,8 +2,8 @@
 Contributors: buddydev, sbrajesh
 Tags: woocommerce,buddypress,woocommerce-for-buddypress
 Requires at least: 5.0
-Tested up to: 6.0.1
-Stable tag: 1.0.5
+Tested up to: 6.2.2
+Stable tag: 1.0.6
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -65,7 +65,7 @@ e.g.
 = Where Do I get Support? =
 Please use [BuddyDev Support Forums](https://buddydev.com/support/forums/) for the support.
 
-= Does it needs WooCommerce & BuddyPress both? =
+= Does it need WooCommerce & BuddyPress both? =
 Yes, it does. If both WooCommerce & BuddyPress are not active, the plugin will not do anything.
 
 = What is the supported BuddyPress version? =
@@ -93,6 +93,9 @@ Please get in touch by providing the details [here](https://buddydev.com/buddypr
 1. User edit address under settings(if configured) screenshot-4.png
 
 == Changelog ==
+= 1.0.5 =
+* Fix optional parameter notice in 8.1+
+
 = 1.0.5 =
 * Fix notices for spl_autoload_register() on PHp 8.0+.
 
