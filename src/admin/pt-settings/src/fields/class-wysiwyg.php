@@ -35,19 +35,22 @@ class Wysiwyg extends Field {
 
 		echo '<div style="width: ' . $size . ';">';
 		$key = str_replace( array( '[', ']' ), array( '_', '_' ), $args['option_key'] );
-		wp_editor( $value, $key, array(
-			'teeny'         => true,
-            'textarea_rows' => 10,
-            'textarea_name' => $args['option_key'],
-		) );
+		wp_editor(
+			$value,
+			$key,
+			array(
+				'teeny'         => true,
+				'textarea_rows' => 10,
+				'textarea_name' => $args['option_key'],
+			)
+		);
 
 		echo '</div>';
 
 		printf( '<br /><span class="pt-settings-field-description"> %s </span>', wp_kses_data( $this->get_desc() ) );
-
 	}
 
 	public function sanitize( $value ) {
-	    return sanitize_textarea_field($value );
+		return sanitize_textarea_field( $value );
 	}
 }

@@ -61,15 +61,18 @@ class Ajax_Handler {
 
 		$page_id = wp_insert_post( $data );
 
-		wp_send_json_success( array(
-			'page_id'    => $page_id,
-			'page_title' => $page_details['title'],
-			'message'    => __( 'Page created successfully.', 'peoplepress' ),
-			'link'       => sprintf('<a href="%1$s" class="%2$s">%3$s</a>',
-				get_permalink( $page_id ),
-				'button pt-settings-view-page-button',
-				_x( 'View', 'Ading Settings page panel, page view label', 'pt-settings' )
-			),
-		) );
+		wp_send_json_success(
+			array(
+				'page_id'    => $page_id,
+				'page_title' => $page_details['title'],
+				'message'    => __( 'Page created successfully.', 'peoplepress' ),
+				'link'       => sprintf(
+					'<a href="%1$s" class="%2$s">%3$s</a>',
+					get_permalink( $page_id ),
+					'button pt-settings-view-page-button',
+					_x( 'View', 'Ading Settings page panel, page view label', 'pt-settings' )
+				),
+			)
+		);
 	}
 }

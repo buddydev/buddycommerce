@@ -13,6 +13,7 @@
 namespace BuddyCommerce\Admin;
 
 use \Press_Themes\PT_Settings\Page;
+use Press_Themes\PT_Settings\Panel;
 
 // Exit if file accessed directly over web.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -57,7 +58,6 @@ class Admin_Settings_Helper {
 		add_action( 'admin_menu', array( $this, 'add_menu' ) );
 
 		add_filter( 'plugin_action_links_' . buddycommerce()->basename, array( $this, 'settings_links' ) );
-
 	}
 
 	/**
@@ -174,14 +174,13 @@ class Admin_Settings_Helper {
 				'default' => 99,
 			)
 		);
-
 	}
 
 	/**
 	 * Add a section with tab details.
 	 *
 	 * @param string $tab tab id.
-	 * @param arr    $args args.
+	 * @param array  $args args.
 	 * @param Panel  $panel panel object.
 	 */
 	private function add_tab_details( $tab, $args, $panel ) {
@@ -199,7 +198,6 @@ class Admin_Settings_Helper {
 		$section = $panel->add_section( $tab, $args['label'], $args['desc'] );
 
 		$section->add_fields( $this->get_tab_fields( $tab, $args ) );
-
 	}
 
 	/**

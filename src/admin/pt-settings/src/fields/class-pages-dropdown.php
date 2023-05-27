@@ -37,7 +37,7 @@ class Pages_Dropdown extends Field {
 	}
 
 	/**
-	 * Displays wordpress dropdown pages for a settings field
+	 * Displays WordPress dropdown pages for a settings field
 	 *
 	 * @param array $args settings field args.
 	 */
@@ -53,7 +53,8 @@ class Pages_Dropdown extends Field {
 		$dropdown = wp_dropdown_pages( $args );
 
 		if ( empty( $args['selected'] ) ) {
-			$dropdown .= sprintf('<a href="%1$s" class="%2$s" data-action="%3$s" data-key="%4$s" data-nonce="%5$s">%6$s</a>',
+			$dropdown .= sprintf(
+				'<a href="%1$s" class="%2$s" data-action="%3$s" data-key="%4$s" data-nonce="%5$s">%6$s</a>',
 				'#',
 				'button pt-settings-create-page-button',
 				'pt_settings_create_page',
@@ -65,7 +66,8 @@ class Pages_Dropdown extends Field {
 			$dropdown .= '<div class="pt-settings-create-page-status"></div>';
 		} else {
 			// we have a page to show.
-			$dropdown .= sprintf('<a href="%1$s" class="%2$s">%3$s</a>',
+			$dropdown .= sprintf(
+				'<a href="%1$s" class="%2$s">%3$s</a>',
 				get_permalink( $args['selected'] ),
 				'button pt-settings-view-page-button',
 				_x( 'View', 'Ading Settings page panel, page view label', 'pt-settings' )

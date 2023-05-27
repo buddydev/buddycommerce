@@ -472,9 +472,9 @@ class Page {
 	 */
 	public function show_form() {
 		?>
-        <div class="metabox-holder pt-settings-metabox-holder">
-            <div class="postbox options-postbox pt-options-box">
-                <form method="post" action="<?php echo admin_url( 'options.php' );?>">
+		<div class="metabox-holder pt-settings-metabox-holder">
+			<div class="postbox options-postbox pt-options-box">
+				<form method="post" action="<?php echo admin_url( 'options.php' );?>">
 					<?php settings_fields( $this->get_optgroup() ); ?>
 
 					<?php foreach ( $this->panels as $panel ) : ?>
@@ -483,31 +483,31 @@ class Page {
 							continue;
 						}
 						?>
-                        <div id="<?php echo esc_attr( $panel->get_id() ); ?>" class="pt-settings-panel-tab">
+						<div id="<?php echo esc_attr( $panel->get_id() ); ?>" class="pt-settings-panel-tab">
 
 							<?php $sections = $panel->get_sections(); ?>
 
 							<?php foreach ( $sections as $section ) : ?>
 								<?php $section_id = $panel->get_id() . '-' . $section->get_id(); ?>
-                                <div id="<?php echo esc_attr( $section_id ); ?>"
-                                     class="pt-settings-section-block <?php echo esc_attr( $section_id ); ?>">
+								<div id="<?php echo esc_attr( $section_id ); ?>"
+									 class="pt-settings-section-block <?php echo esc_attr( $section_id ); ?>">
 									<?php do_action( 'pt_settings_form_top_' . $section_id, $section ); ?>
 
 									<?php $this->do_settings_sections( $this->get_page(), $section_id ); ?>
 									<?php do_action( 'pt_settings_form_bottom_' . $section_id, $section ); ?>
-                                </div>
+								</div>
 							<?php endforeach; ?>
 
-                            <div class="pt-settings-submit">
+							<div class="pt-settings-submit">
 								<?php submit_button(); ?>
-                            </div>
-                        </div>
+							</div>
+						</div>
 					<?php endforeach; ?>
 
-                </form>
+				</form>
 				<?php $this->styles(); ?>
-            </div>
-        </div>
+			</div>
+		</div>
 		<?php
 		$this->script();
 	}
@@ -600,7 +600,6 @@ class Page {
 		do_settings_fields( $page, $section['id'] );
 
 		echo '</table>';
-
 	}
 
 	/**
@@ -639,46 +638,46 @@ class Page {
 	 */
 	public function script() {
 		?>
-        <script type="text/javascript">
-            jQuery(document).ready(function ($) {
-                // Switches option sections.
-                $('.pt-settings-panel-tab').hide();
-                var activetab = '';
-                //check for the active tab stored in the local storage
-                if (typeof(localStorage) != 'undefined') {
-                    activetab = localStorage.getItem('pt-settings-active-tab');
-                }
-                //if active tab is set, show it
-                if (activetab != '' && $(activetab).length) {
-                    $(activetab).fadeIn();
-                } else {
-                    //otherwise show the first tab
-                    $('.pt-settings-panel-tab:first').fadeIn();
-                }
+		<script type="text/javascript">
+			jQuery(document).ready(function ($) {
+				// Switches option sections.
+				$('.pt-settings-panel-tab').hide();
+				var activetab = '';
+				//check for the active tab stored in the local storage
+				if (typeof(localStorage) != 'undefined') {
+					activetab = localStorage.getItem('pt-settings-active-tab');
+				}
+				// if active tab is set, show it.
+				if (activetab !== '' && $(activetab).length) {
+					$(activetab).fadeIn();
+				} else {
+					// otherwise show the first tab.
+					$('.pt-settings-panel-tab:first').fadeIn();
+				}
 
-                if (activetab != '' && $(activetab + '-tab').length) {
-                    $(activetab + '-tab').addClass('nav-tab-active');
-                }
-                else {
-                    $('.pt-settings-tab-wrapper a:first').addClass('nav-tab-active');
-                }
+				if (activetab !== '' && $(activetab + '-tab').length) {
+					$(activetab + '-tab').addClass('nav-tab-active');
+				}
+				else {
+					$('.pt-settings-tab-wrapper a:first').addClass('nav-tab-active');
+				}
 
-                //on click of the tab navigation
-                $('.pt-settings-tab-wrapper a').click(function (evt) {
-                    $('.pt-settings-tab-wrapper a').removeClass('nav-tab-active');
-                    $(this).addClass('nav-tab-active').blur();
-                    var clicked_group = $(this).attr('href');
+				//on click of the tab navigation
+				$('.pt-settings-tab-wrapper a').click(function (evt) {
+					$('.pt-settings-tab-wrapper a').removeClass('nav-tab-active');
+					$(this).addClass('nav-tab-active').blur();
+					var clicked_group = $(this).attr('href');
 
-                    if (typeof(localStorage) != 'undefined') {
-                        localStorage.setItem("pt-settings-active-tab", $(this).attr('href'));
-                    }
+					if (typeof(localStorage) != 'undefined') {
+						localStorage.setItem("pt-settings-active-tab", $(this).attr('href'));
+					}
 
-                    $('.pt-settings-panel-tab').hide();
-                    $(clicked_group).fadeIn();
-                    evt.preventDefault();
-                });
-            });
-        </script>
+					$('.pt-settings-panel-tab').hide();
+					$(clicked_group).fadeIn();
+					evt.preventDefault();
+				});
+			});
+		</script>
 		<?php
 	}
 

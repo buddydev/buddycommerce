@@ -19,16 +19,6 @@ use Press_Themes\PT_Settings\Field;
 class Image extends Field {
 
 	/**
-	 * Field_Image constructor.
-	 *
-	 * @param array $field field options.
-	 */
-	public function __construct( $field ) {
-
-		parent::__construct( $field );
-	}
-
-	/**
 	 * Render the upload field.
 	 *
 	 * @param mixed $args options.
@@ -69,6 +59,5 @@ class Image extends Field {
 		printf( '<input type="button" class="button pt-settings-upload-image-button" id="%1$s_button" value="%2$s" data-id="%1$s" data-btn-title="%3$s" data-uploader-title="%3$s" />', esc_attr( $id ), 'Browse', 'Select' );
 
 		printf( '<span class="pt-settings-field-description">%s</span>', wp_kses_data( $this->get_desc() ) );
-
 	}
 }

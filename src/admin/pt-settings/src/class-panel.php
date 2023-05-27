@@ -57,7 +57,6 @@ class Panel {
 		$this->id    = $id;
 		$this->title = $title;
 		$this->desc  = $desc;
-
 	}
 
 	/**
@@ -76,7 +75,6 @@ class Panel {
 		$this->sections[ $section_id ] = new Section( $id, $title, $desc );
 
 		return $this->sections[ $section_id ];
-
 	}
 
 	/**
@@ -93,7 +91,6 @@ class Panel {
 		}
 
 		return $this;
-
 	}
 
 	/**
@@ -132,7 +129,6 @@ class Panel {
 		$this->id = $id;
 
 		return $this;
-
 	}
 
 	/**
@@ -147,7 +143,6 @@ class Panel {
 		$this->title = $title;
 
 		return $this;
-
 	}
 
 	/**
@@ -162,7 +157,6 @@ class Panel {
 		$this->desc = $desc;
 
 		return $this;
-
 	}
 
 	/**
@@ -206,7 +200,6 @@ class Panel {
 		}
 
 		return false;
-
 	}
 
 }
