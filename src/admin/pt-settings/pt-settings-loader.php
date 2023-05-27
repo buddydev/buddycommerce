@@ -33,7 +33,7 @@ if ( ! function_exists( 'pt_settings_class_loader' ) ) :
 	 *
 	 * @return void
 	 */
-	function pt_settings_class_loader( $class ) {
+	function pt_settings_class_loader( $class_name ) {
 
 		// Project-specific namespace prefix.
 		$prefix = 'Press_Themes\\PT_Settings\\';
@@ -44,14 +44,14 @@ if ( ! function_exists( 'pt_settings_class_loader' ) ) :
 		// does the class use the namespace prefix?
 		$len = strlen( $prefix );
 
-		if ( strncmp( $prefix, $class, $len ) !== 0 ) {
+		if ( strncmp( $prefix, $class_name, $len ) !== 0 ) {
 			// no, move to the next registered auto loader.
 			return;
 		}
 
 		// get the relative class name.
 		// also make it lower case as we will use it as file name with wp standards.
-		$relative_class = strtolower( substr( $class, $len ) );
+		$relative_class = strtolower( substr( $class_name, $len ) );
 
 		// replace the namespace prefix with the base directory, replace namespace
 		// separators with directory separators in the relative class name, append
@@ -63,7 +63,7 @@ if ( ! function_exists( 'pt_settings_class_loader' ) ) :
 
 		$file = join( '/', $file );
 		// Replace the last component
-		//$file = strtolower( $file ); // only lowercase file names.
+		// $file = strtolower( $file ); // only lowercase file names.
 
 		// If the file exists, require it.
 		if ( file_exists( $file ) ) {

@@ -59,7 +59,6 @@ class Section {
 		$this->id    = $id;
 		$this->title = $title;
 		$this->desc  = $desc;
-
 	}
 
 	/**
@@ -114,7 +113,6 @@ class Section {
 		}
 
 		return $this;
-
 	}
 
 	/**
@@ -131,7 +129,6 @@ class Section {
 		$this->add_fields( $fields );
 
 		return $this;
-
 	}
 
 	/**
@@ -144,7 +141,6 @@ class Section {
 		$this->fields = array();
 
 		return $this;
-
 	}
 
 	/**

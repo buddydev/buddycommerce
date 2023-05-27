@@ -66,11 +66,11 @@ class BC_Autoloader {
 	 * Since we wills tick to wp standards, we will be using interface-$classname.php for loading iterface(and similar for traits)
 	 * It sacrifices a bit of speed for readability( if we do not prefix with class-, interface-,trait-, it wil be better).
 	 *
-	 * @param string $class The fully-qualified class name.
+	 * @param string $class_name The fully-qualified class name.
 	 *
 	 * @return void
 	 */
-	public function __invoke( $class ) {
+	public function __invoke( $class_name ) {
 		// Project-specific namespace prefix.
 		$prefix = $this->root_namespace;
 
@@ -80,14 +80,14 @@ class BC_Autoloader {
 		// does the class use the namespace prefix?
 		$len = strlen( $prefix );
 
-		if ( strncmp( $prefix, $class, $len ) !== 0 ) {
+		if ( strncmp( $prefix, $class_name, $len ) !== 0 ) {
 			// no, move to the next registered auto loader.
 			return;
 		}
 
 		// get the relative class name.
 		// also make it lower case as we will use it as file name with wp standards.
-		$relative_class = strtolower( substr( $class, $len ) );
+		$relative_class = strtolower( substr( $class_name, $len ) );
 
 		// replace the namespace prefix with the base directory, replace namespace
 		// separators with directory separators in the relative class name, append
@@ -96,13 +96,13 @@ class BC_Autoloader {
 
 		$file      = explode( '/', $file );
 		$file_name = array_pop( $file );
-		$base_dir = join( '/', $file );
+		$base_dir  = join( '/', $file );
 
 		// Since we have a naming convention for file like 'class-', 'interface-', 'trait-',
 		// we need to test for each of them.
-		$class_file = $base_dir . "/class-{$file_name}.php";
+		$class_file     = $base_dir . "/class-{$file_name}.php";
 		$interface_file = $base_dir . "/interface-{$file_name}.php";
-		$trait_file = $base_dir . "/trait-{$file_name}.php";
+		$trait_file     = $base_dir . "/trait-{$file_name}.php";
 
 		// Replace the last component
 		// If the file exists, require it.

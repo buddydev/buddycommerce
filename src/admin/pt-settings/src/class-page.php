@@ -88,7 +88,7 @@ class Page {
 	 *  Settings Page constructor
 	 *
 	 * @param string $page unique page slug.
-     * @param string $title page title.
+	 * @param string $title page title.
 	 */
 	public function __construct( $page, $title = '' ) {
 
@@ -162,10 +162,14 @@ class Page {
 
 					$this->cb_stack[ $field->get_id() ] = $field->get_sanitize_cb();
 
-					add_settings_field( $option_name, $field->get_label(), array(
-						$field,
-						'render',
-					), $this->get_page(), $section_id, $args );
+					add_settings_field(
+						$option_name,
+						$field->get_label(),
+						array( $field, 'render' ),
+						$this->get_page(),
+						$section_id,
+						$args
+					);
 
 					// When using local option.
 					if ( $this->using_unique_option() ) {
@@ -273,7 +277,7 @@ class Page {
 				$value = $default;
 			} elseif ( isset( $options[ $option ] ) ) {
 				$value = $options[ $option ];
-			} elseif ( 'checkbox' != $field->get_type() && 'multicheck' != $field->get_type() ) {
+			} elseif ( 'checkbox' !== $field->get_type() && 'multicheck' !== $field->get_type() ) {
 				$value = $default;
 			}
 		} else {
@@ -433,7 +437,7 @@ class Page {
 	private function show_title() {
 
 		if ( $this->title ) {
-			$title = $this->title;// wp_kses_data( $this->title );
+			$title = $this->title; // wp_kses_data( $this->title );
 			echo "<h1>{$title}</h1>";
 		}
 	}
@@ -510,38 +514,42 @@ class Page {
 
 	public function styles() {
 		?>
-        <style type="text/css">
-            .pt-settings-page-wrap h1 + .pt-settings-tab-wrapper {
-                margin-top:15px;
-            }
-            .pt-options-box {
-                padding: 10px;
-            }
+        <style>
+			.pt-settings-page-wrap h1 + .pt-settings-tab-wrapper {
+				margin-top: 15px;
+			}
 
-            .pt-settings-section-block {
-                padding: 15px 12px;
-                background: #fff;
-            }
+			.pt-options-box {
+				padding: 10px;
+			}
 
-            .pt-settings-section-block:nth-child(odd) {
-                background: #f8f8f8;
-            }
+			.pt-settings-section-block {
+				padding: 15px 12px;
+				background: #fff;
+			}
 
-            .pt-settings-section-block h3 {
-                padding: 0 0;
-                font-size: 20px;
-            }
-            .pt-settings-section-block .pt-settings-field-description {
-                font-style:italic;
-                display: block;
-            }
-            .pt-settings-field-type-number {
-                width: 3em;
-            }
-            .pt-settings-submit {
-                padding-left: 10px;
-            }
-        </style>
+			.pt-settings-section-block:nth-child(odd) {
+				background: #f8f8f8;
+			}
+
+			.pt-settings-section-block h3 {
+				padding: 0 0;
+				font-size: 20px;
+			}
+
+			.pt-settings-section-block .pt-settings-field-description {
+				font-style: italic;
+				display: block;
+			}
+
+			.pt-settings-field-type-number {
+				width: 3em;
+			}
+
+			.pt-settings-submit {
+				padding-left: 10px;
+			}
+		</style>
 		<?php
 	}
 

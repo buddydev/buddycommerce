@@ -1,17 +1,21 @@
 /* Hide add payment methods on the user profile screen for now*/
 .bcommerce-payment-methods a[href="/add-payment-method/"] {
-   /* display: none;*/
+	/* display: none;*/
 }
+
 .wc-membership-contents {
-    display: flex;
+	display: flex;
 }
+
 .wc-memberships-members-area-navigation .woocommerce-MyAccount-navigation-link {
-    padding: 0 10px;
+	padding: 0 10px;
 }
-.wc-membership-contents .wc-memberships-members-area-navigation{
-    flex-grow: 1;
-    min-width: 165px;
+
+.wc-membership-contents .wc-memberships-members-area-navigation {
+	flex-grow: 1;
+	min-width: 165px;
 }
-.wc-membership-contents .my-membership-section{
-    flex-grow: 2;
+
+.wc-membership-contents .my-membership-section {
+	flex-grow: 2;
 }

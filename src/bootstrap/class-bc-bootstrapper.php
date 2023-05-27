@@ -121,7 +121,6 @@ class BC_Bootstrapper {
 		BC_URL_Filters::boot();
 		BC_Condition_Filters::boot();
 		BC_Tabs_Helper::boot();
-
 	}
 
 	/**

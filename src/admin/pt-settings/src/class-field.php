@@ -137,7 +137,6 @@ class Field {
 
 		$this->default = $args['default'];
 		$this->extra   = $args['extra'];
-
 	}
 
 	/**
@@ -154,7 +153,6 @@ class Field {
 		}
 
 		return false;
-
 	}
 
 	/**
@@ -254,7 +252,6 @@ class Field {
 		}
 
 		return $cb;
-
 	}
 
 	/**
@@ -277,7 +274,6 @@ class Field {
 		}
 
 		return $value;
-
 	}
 
 	/**
@@ -294,7 +290,6 @@ class Field {
 		if ( method_exists( $this, $method_name ) ) {
 			call_user_func( array( $this, $method_name ), $args );
 		}
-
 	}
 
 	/**
@@ -317,7 +312,6 @@ class Field {
 
 		printf( '<input type="text" class="%1$s-text pt-settings-field-type-text" id="%2$s" name="%2$s" value="%3$s"/>', esc_attr( $size ), esc_attr( $args['option_key'] ), esc_attr( $value ) );
 		printf( '<span class="pt-settings-field-description"> %s </span>', esc_html( $this->get_desc() ) );
-
 	}
 
 	/**
@@ -340,7 +334,6 @@ class Field {
 
 		printf( '<input type="text" class="%1$s-text pt-settings-field-type-number" id="%2$s" name="%2$s" value="%3$s"/>', esc_attr( $size ), esc_attr( $args['option_key'] ), esc_attr( $value ) );
 		printf( '<span class="pt-settings-field-description"> %s </span>', esc_html( $this->get_desc() ) );
-
 	}
 
 	/**
@@ -357,7 +350,6 @@ class Field {
 
 		printf( '<input type="checkbox" class="checkbox pt-settings-field-type-checkbox" id="%1$s" name="%1$s" value="1" %3$s />', esc_attr( $args['option_key'] ), esc_attr( $value ), checked( $value, 1, false ) );
 		printf( '<label for="%1$s"> %2$s</label>', esc_attr( $args['option_key'] ), esc_html( $this->get_desc() ) );
-
 	}
 
 	/**
@@ -378,7 +370,6 @@ class Field {
 		}
 
 		printf( '<span class="pt-settings-field-description"> %s </span>', wp_kses_data( $this->get_desc() ) );
-
 	}
 
 	/**
@@ -399,7 +390,6 @@ class Field {
 		}
 
 		printf( '<span class="pt-settings-field-description"> %s</label>', wp_kses_data( $this->get_desc() ) );
-
 	}
 
 	/**
@@ -423,7 +413,6 @@ class Field {
 
 		printf( '</select>' );
 		printf( '<span class="pt-settings-field-description"> %s </label>', wp_kses_data( $this->get_desc() ) );
-
 	}
 
 	/**
@@ -438,7 +427,6 @@ class Field {
 
 		printf( '<textarea rows="5" cols="55" class="%1$s-text pt-settings-field-type-textarea" id="%2$s" name="%2$s">%3$s</textarea>', esc_attr( $size ), esc_attr( $args['option_key'] ), esc_attr( $value ) );
 		printf( '<br /><span class="pt-settings-field-description"> %s </span>', wp_kses_data( $this->get_desc() ) );
-
 	}
 
 	/**
@@ -463,7 +451,6 @@ class Field {
 		printf( '<input type="password" class="%1$s-text pt-settings-field-type-password" id="%2$s" name="%2$s" value="%3$s"/>', esc_attr( $size ), esc_attr( $args['option_key'] ), esc_attr( $value ) );
 
 		printf( '<span class="pt-settings-field-description"> %s </span>', wp_kses_data( $this->get_desc() ) );
-
 	}
 
 }

@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 echo '<div class="wc-membership-contents">';
 $endpoint = wc_memberships_get_members_area_endpoint();
 
-$located  = wc_locate_template( 'myaccount/my-membership-navigation.php' );
+$located = wc_locate_template( 'myaccount/my-membership-navigation.php' );
 
 if ( $located && is_readable( $located ) ) {
 	require $located;

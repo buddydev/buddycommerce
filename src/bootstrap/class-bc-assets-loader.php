@@ -52,15 +52,8 @@ class BC_Assets_Loader {
 	 */
 	private function register_core() {
 		$version = buddycommerce()->version;
-		// We will move this part to template pack in future.
+		// We will move this part to template pack in the future.
 		wp_register_style( 'buddycommerce-core', bcommerce_locate_asset( 'assets/buddycommerce-core.css' ), false, $version );
-		// wp_register_script( 'buddycommerce-core', bcommerce_locate_asset( 'assets/buddycommerce-core.js' ), array( 'jquery' ), $version, false );
-
-		// $this->data ['endpoints'] = array();
-
-		// $this->data['nonce'] = wp_create_nonce( 'wp_rest' );
-
-		// wp_localize_script( 'buddycommerce-core', 'BuddyCommerce', $this->data );
 	}
 
 	/**
@@ -68,7 +61,6 @@ class BC_Assets_Loader {
 	 */
 	private function enqueue() {
 		wp_enqueue_style( 'buddycommerce-core' );
-		// wp_enqueue_script( 'buddycommerce-core' );
 	}
 
 	/**
