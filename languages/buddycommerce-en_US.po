@@ -1,17 +1,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BUddyCommerce\n"
-"POT-Creation-Date: 2022-03-27 22:56+0530\n"
-"PO-Revision-Date: 2022-03-27 22:56+0530\n"
+"POT-Creation-Date: 2023-05-27 18:56+0530\n"
+"PO-Revision-Date: 2023-05-27 18:56+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
-"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _e;__;_ex:1,2c;_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -85,92 +85,92 @@ msgstr ""
 msgid "It controls where the top level menu items appear in admin bar"
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:211
+#: src/admin/class-admin-settings-helper.php:209
 msgctxt "Admin settings page title"
 msgid "BuddyCommerce"
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:212
+#: src/admin/class-admin-settings-helper.php:210
 msgctxt "Admin settings menu label"
 msgid "BuddyCommerce"
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:240
+#: src/admin/class-admin-settings-helper.php:238
 msgid "Is enabled"
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:243
+#: src/admin/class-admin-settings-helper.php:241
 msgid "Add this as a tab/sub tab on profile."
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:247
+#: src/admin/class-admin-settings-helper.php:245
 msgid "Label"
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:250
+#: src/admin/class-admin-settings-helper.php:248
 msgid "BuddyPress User profile tab label"
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:254
+#: src/admin/class-admin-settings-helper.php:252
 msgid "Slug"
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:257
+#: src/admin/class-admin-settings-helper.php:255
 msgid "BuddyPress Profile tab slug."
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:257
+#: src/admin/class-admin-settings-helper.php:255
 msgid ""
 "For WooCommerce endpoints, if slug is not specified, It takes the default "
 "slug from WooCommerce Advance settings"
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:261
+#: src/admin/class-admin-settings-helper.php:259
 msgid "Position"
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:264
+#: src/admin/class-admin-settings-helper.php:262
 msgid "Lower number means tab will be added early."
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:268
+#: src/admin/class-admin-settings-helper.php:266
 msgid "Add as top level nav item?"
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:271
+#: src/admin/class-admin-settings-helper.php:269
 msgid "If checked, tab will appear as top level user nav item."
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:279
+#: src/admin/class-admin-settings-helper.php:277
 msgid "Parent Tab"
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:282
+#: src/admin/class-admin-settings-helper.php:280
 msgid ""
 "Only used if this tab is not added as top level. If specified, a sub nav "
 "will be added to the parent tab. If not specified, will be added as sub tab "
 "of \"shop\"."
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:286
+#: src/admin/class-admin-settings-helper.php:284
 msgid "Parent Tab Admin bar id"
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:289
+#: src/admin/class-admin-settings-helper.php:287
 msgid ""
 "If this tab is a child tab of a custom tab, please specify parent tab's "
 "admin bar id. see docs for help."
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:294
+#: src/admin/class-admin-settings-helper.php:292
 msgid "Default subnav"
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:297
+#: src/admin/class-admin-settings-helper.php:295
 msgid "Default subnav slug."
 msgstr ""
 
-#: src/admin/class-admin-settings-helper.php:306
+#: src/admin/class-admin-settings-helper.php:304
 msgid "Redirect?"
 msgstr ""
 
@@ -182,17 +182,17 @@ msgstr ""
 msgid "Page details not found."
 msgstr ""
 
-#: src/admin/pt-settings/src/class-ajax-handler.php:67
+#: src/admin/pt-settings/src/class-ajax-handler.php:68
 msgid "Page created successfully."
 msgstr ""
 
-#: src/admin/pt-settings/src/class-ajax-handler.php:71
-#: src/admin/pt-settings/src/fields/class-pages-dropdown.php:71
+#: src/admin/pt-settings/src/class-ajax-handler.php:73
+#: src/admin/pt-settings/src/fields/class-pages-dropdown.php:73
 msgctxt "Ading Settings page panel, page view label"
 msgid "View"
 msgstr ""
 
-#: src/admin/pt-settings/src/fields/class-image.php:63
+#: src/admin/pt-settings/src/fields/class-image.php:53
 msgid "Remove"
 msgstr ""
 
@@ -200,31 +200,31 @@ msgstr ""
 msgid "Select Page"
 msgstr ""
 
-#: src/admin/pt-settings/src/fields/class-pages-dropdown.php:62
+#: src/admin/pt-settings/src/fields/class-pages-dropdown.php:63
 msgid "Create"
 msgstr ""
 
-#: src/core/bc-general-functions.php:81
+#: src/core/bc-general-functions.php:82
 msgid "Shop"
 msgstr ""
 
-#: src/core/bc-general-functions.php:82
+#: src/core/bc-general-functions.php:83
 msgid "Shop tab settings for profile."
 msgstr ""
 
-#: src/core/bc-general-functions.php:86
+#: src/core/bc-general-functions.php:87
 msgid "Redirect WooCommerce my account page to BuddyPress profile page"
 msgstr ""
 
-#: src/core/bc-general-functions.php:92
+#: src/core/bc-general-functions.php:93
 msgid "Order"
 msgstr ""
 
-#: src/core/bc-general-functions.php:93
+#: src/core/bc-general-functions.php:94
 msgid "Order tab settings."
 msgstr ""
 
-#: src/core/bc-general-functions.php:96
+#: src/core/bc-general-functions.php:97
 msgid "Redirect WooCommerce orders page to BuddyPress profile page"
 msgstr ""
 
@@ -236,102 +236,102 @@ msgstr ""
 msgid "Order tracking tab settings."
 msgstr ""
 
-#: src/core/bc-general-functions.php:111
+#: src/core/bc-general-functions.php:110
 #: src/core/users/handlers/class-bc-tabs-helper.php:291
 #: src/core/users/handlers/class-bc-tabs-helper.php:310
 msgid "Downloads"
 msgstr ""
 
-#: src/core/bc-general-functions.php:112
+#: src/core/bc-general-functions.php:111
 msgid "Downloads tab settings."
 msgstr ""
 
-#: src/core/bc-general-functions.php:115
+#: src/core/bc-general-functions.php:114
 msgid "Redirect WooCommerce my downloads page to BuddyPress profile page"
 msgstr ""
 
-#: src/core/bc-general-functions.php:121
+#: src/core/bc-general-functions.php:119
 #: src/core/users/handlers/class-bc-tabs-helper.php:338
 #: src/core/users/handlers/class-bc-tabs-helper.php:357
 msgid "Addresses"
 msgstr ""
 
-#: src/core/bc-general-functions.php:123
+#: src/core/bc-general-functions.php:121
 msgid "Addresses tab settings."
 msgstr ""
 
-#: src/core/bc-general-functions.php:126
+#: src/core/bc-general-functions.php:124
 msgid "Redirect WooCommerce addresses page to BuddyPress profile page"
 msgstr ""
 
-#: src/core/bc-general-functions.php:132
+#: src/core/bc-general-functions.php:129
 #: src/core/users/handlers/class-bc-tabs-helper.php:385
 #: src/core/users/handlers/class-bc-tabs-helper.php:404
 msgid "Payment Methods"
 msgstr ""
 
-#: src/core/bc-general-functions.php:134
+#: src/core/bc-general-functions.php:131
 msgid "Payment method tab settings."
 msgstr ""
 
-#: src/core/bc-general-functions.php:137
+#: src/core/bc-general-functions.php:134
 msgid "Redirect WooCommerce payment methods page to BuddyPress profile page"
 msgstr ""
 
-#: src/core/bc-general-functions.php:142
+#: src/core/bc-general-functions.php:139
 #: src/core/users/handlers/class-bc-tabs-helper.php:432
 #: src/core/users/handlers/class-bc-tabs-helper.php:451
 msgid "Cart"
 msgstr ""
 
-#: src/core/bc-general-functions.php:144
+#: src/core/bc-general-functions.php:141
 msgid "Add WooCommerce Cart page as profile tab."
 msgstr ""
 
-#: src/core/bc-general-functions.php:147
+#: src/core/bc-general-functions.php:144
 msgid "Redirect site cart page to BuddyPress profile cart page"
 msgstr ""
 
-#: src/core/bc-general-functions.php:152
+#: src/core/bc-general-functions.php:149
 #: src/core/users/handlers/class-bc-tabs-helper.php:479
 #: src/core/users/handlers/class-bc-tabs-helper.php:498
 msgid "Checkout"
 msgstr ""
 
-#: src/core/bc-general-functions.php:154
+#: src/core/bc-general-functions.php:151
 msgid ""
 "Add WooCommerce checkout page as user profile tab. We recommend not enabling "
 "it."
 msgstr ""
 
-#: src/core/bc-general-functions.php:157
+#: src/core/bc-general-functions.php:154
 msgid "Redirect site checkout page to BuddyPress profile checkout page"
 msgstr ""
 
-#: src/core/bc-general-functions.php:167
+#: src/core/bc-general-functions.php:162
 #: src/core/users/handlers/class-bc-tabs-helper.php:563
 #: src/core/users/handlers/class-bc-tabs-helper.php:582
 #: src/core/users/handlers/class-bc-tabs-helper.php:632
 msgid "Subscriptions"
 msgstr ""
 
-#: src/core/bc-general-functions.php:169
+#: src/core/bc-general-functions.php:164
 msgid "Subscription tab settings."
 msgstr ""
 
-#: src/core/bc-general-functions.php:172
+#: src/core/bc-general-functions.php:167
 msgid "Redirect WooCommerce subscription page to BuddyPress profile page"
 msgstr ""
 
-#: src/core/bc-general-functions.php:180
+#: src/core/bc-general-functions.php:175
 msgid "Memberships"
 msgstr ""
 
-#: src/core/bc-general-functions.php:182
+#: src/core/bc-general-functions.php:177
 msgid "Membership tab settings."
 msgstr ""
 
-#: src/core/bc-general-functions.php:185
+#: src/core/bc-general-functions.php:180
 msgid "Redirect WooCommerce My membership page to BuddyPress profile page"
 msgstr ""
 
