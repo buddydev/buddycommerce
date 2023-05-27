@@ -107,7 +107,7 @@ function bcommerce_get_user_orders_permalink( $user_id, $user_url = '' ) {
  *
  * @return string
  */
-function bcommerce_get_user_view_order_permalink( $user_id, $user_url = '', $order_id ) {
+function bcommerce_get_user_view_order_permalink( $user_id, $user_url = '', $order_id = 0 ) {
 
 	$endpoint   = bcommerce_get_endpoint_slug( 'view-order' );
 
@@ -191,7 +191,7 @@ function bcommerce_get_user_subscriptions_permalink( $user_id, $user_url = '' ) 
  *
  * @return string
  */
-function bcommerce_get_user_view_subscription_permalink( $user_id, $user_url = '', $order_id ) {
+function bcommerce_get_user_view_subscription_permalink( $user_id, $user_url = '', $order_id = 0 ) {
 
 	$endpoint   = bcommerce_get_endpoint_slug( 'view-subscription' );
 
