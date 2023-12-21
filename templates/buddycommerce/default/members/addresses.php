@@ -13,6 +13,9 @@
 // Do not allow direct access over web.
 defined( 'ABSPATH' ) || exit;
 
+// Print all notices.
+woocommerce_output_all_notices();
+
 // Our end point is 'edit-address', we need the address type to pass.
 // Magic.
 // We are telling wooCommerce which type of address to edit.
