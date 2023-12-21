@@ -27,7 +27,7 @@ class BuddyCommerce {
 	 *
 	 * @var string
 	 */
-	private $version = '1.0.6';
+	private $version = '1.0.7';
 
 	/**
 	 * Singleton instance

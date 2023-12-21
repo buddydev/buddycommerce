@@ -8,7 +8,7 @@
  * Plugin Name:       BuddyCommerce
  * Plugin URI:        https://buddydev.com/plugins/buddycommerce/
  * Description:       BuddyPress and WooCommerce Integration.
- * Version:           1.0.6
+ * Version:           1.0.7
  * Author:            BuddyDev
  * Author URI:        https://buddydev.com/
  * License:           GPL-2.0+
