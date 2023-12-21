@@ -2,8 +2,8 @@
 Contributors: buddydev, sbrajesh
 Tags: woocommerce,buddypress,woocommerce-for-buddypress
 Requires at least: 5.0
-Tested up to: 6.2.2
-Stable tag: 1.0.6
+Tested up to: 6.4.2
+Stable tag: 1.0.7
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -93,7 +93,10 @@ Please get in touch by providing the details [here](https://buddydev.com/buddypr
 1. User edit address under settings(if configured) screenshot-4.png
 
 == Changelog ==
-= 1.0.5 =
+= 1.0.7 =
+* Fix not showing error notices on saving address.
+
+= 1.0.6 =
 * Fix optional parameter notice in 8.1+
 
 = 1.0.5 =
