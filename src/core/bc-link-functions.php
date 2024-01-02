@@ -31,7 +31,7 @@ function bcommerce_get_user_nav_item_permalink( $user_id, $user_url = '', $tab =
 
 	$slug = bcommerce_get_tab_slug( $tab, $endpoint );
 	if ( ! $user_url ) {
-		$user_url = bp_core_get_user_domain( $user_id );
+		$user_url = function_exists( 'bp_members_get_user_url' ) ? bp_members_get_user_url( $user_id ) : bp_core_get_user_domain( $user_id );
 	}
 
 	if ( bcommerce_is_top_level_user_nav_item( $tab ) ) {
@@ -57,7 +57,7 @@ function bcommerce_get_user_nav_item_permalink( $user_id, $user_url = '', $tab =
  */
 function bcommerce_get_user_my_account_permalink( $user_id, $user_url = '' ) {
 	if ( ! $user_url ) {
-		$user_url = bp_core_get_user_domain( $user_id );
+		$user_url = function_exists( 'bp_members_get_user_url' ) ? bp_members_get_user_url( $user_id ) : bp_core_get_user_domain( $user_id );
 	}
 
 	return trailingslashit( $user_url . bcommerce_get_default_parent_tab_slug() );
