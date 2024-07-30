@@ -72,7 +72,7 @@ class BC_Tabs_Helper {
 		}
 
 		// Do not proceed if BP_USE_WP_ADMIN_BAR constant is not set or is false.
-		if ( ! bp_use_wp_admin_bar() ) {
+		if ( function_exists('bp_use_wp_admin_bar') && ! bp_use_wp_admin_bar() ) {
 			return;
 		}
 
