@@ -2,8 +2,8 @@
 Contributors: buddydev, sbrajesh
 Tags: woocommerce,buddypress,woocommerce-for-buddypress
 Requires at least: 5.0
-Tested up to: 6.4.2
-Stable tag: 1.0.7
+Tested up to: 6.6.1
+Stable tag: 1.0.8
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -72,7 +72,7 @@ Yes, it does. If both WooCommerce & BuddyPress are not active, the plugin will n
 BuddyPress 3.0+, Tested with BuddyPress 6.2
 
 = What is the supported WooCommerce version? =
-WooCommerce 3.5+, Tested with BuddyPress 4.3.1
+WooCommerce 3.5+, Tested with BuddyPress 12.0
 
 = Does it work with BuddyBoss platform and theme? =
 Yes, it does.
@@ -93,6 +93,9 @@ Please get in touch by providing the details [here](https://buddydev.com/buddypr
 1. User edit address under settings(if configured) screenshot-4.png
 
 == Changelog ==
+= 1.0.8 =
+* Fix fatal error on BuddyPress 14.0 due to deprecation of 'bp_use_wp_admin_bar()' function, props Matt Jones(lamellama).
+
 = 1.0.7 =
 * Fix not showing error notices on saving address.
 
