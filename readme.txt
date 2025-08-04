@@ -2,7 +2,7 @@
 Contributors: buddydev, sbrajesh
 Tags: woocommerce,buddypress,woocommerce-for-buddypress
 Requires at least: 5.0
-Tested up to: 6.6.1
+Tested up to: 6.8.2
 Stable tag: 1.0.8
 Requires PHP: 5.4
 License: GPLv2 or later
@@ -69,10 +69,10 @@ Please use [BuddyDev Support Forums](https://buddydev.com/support/forums/) for t
 Yes, it does. If both WooCommerce & BuddyPress are not active, the plugin will not do anything.
 
 = What is the supported BuddyPress version? =
-BuddyPress 3.0+, Tested with BuddyPress 6.2
+BuddyPress 8.0+, Tested with BuddyPress 14.3.4
 
 = What is the supported WooCommerce version? =
-WooCommerce 3.5+, Tested with BuddyPress 12.0
+WooCommerce 6.0+, Tested with WooCommerce 10.0.4
 
 = Does it work with BuddyBoss platform and theme? =
 Yes, it does.
@@ -103,7 +103,7 @@ Please get in touch by providing the details [here](https://buddydev.com/buddypr
 * Fix optional parameter notice in 8.1+
 
 = 1.0.5 =
-* Fix notices for spl_autoload_register() on PHp 8.0+.
+* Fix notices for spl_autoload_register() on PHP 8.0+.
 
 = 1.0.4 =
 * Fix add payment method showing existing payment methods and double button.
